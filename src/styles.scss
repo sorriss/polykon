@@ -1,3 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+  --gray-primary: #302f2e;
+  --gray-secondary: #6e6e6d;
+  --gray-tertiary: #afafaf;
+  --gray-stroke: #c7c6c4;
+  --gray-background: #efeae4;
+  --gray-white: #fafafa;
+  --gray-logo-hover: #010000;
+  --color-primary: #313d65;
+  --color-hover: #212943;
+  --color-pressed: #535d7f;
+  --color-disabled: #babecc;
+  --color-fill: #d6d8e0;
+  --blur-card: rgba(0, 0, 0, 0.5);
+  --blur-background: rgba(179, 179, 179, 0.32);
+  --system-error-default: #d1291e;
+  --system-error-hover: #8b1b14;
+  --system-error-fill: #f6d4d2;
+  --system-warning-default: #c27300;
+  --system-warning-hover: #814d00;
+  --system-warning-fill: #f3e3cc;
+  --system-success-default: #008044;
+  --system-success-hover: #00552d;
+  --system-success-fill: #cce6da;
+  --system-info-default: #3050a6;
+  --system-info-hover: #20356f;
+  --system-info-fill: #d6dced;
+
+  --font-family: "Montserrat", sans-serif;
+  --second-family: "Lato", sans-serif;
+  --third-family: "SF Pro Display", sans-serif;
+  --font3: "Inter", sans-serif;
+  --font4: "EB Garamond", sans-serif;
+  --font5: "SF Pro", sans-serif;
+  --font6: "SF Pro Text", sans-serif;
+  --font7: "Archivo", sans-serif;
+}
+
+
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -14,6 +55,7 @@ body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-family: var(--font-family), sans-serif;
 }
 
 img, picture, video, canvas, svg {
