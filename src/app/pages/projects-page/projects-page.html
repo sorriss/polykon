@@ -1,0 +1,11 @@
+<section class="projects-section">
+  <h1 class="projects-title">{{ text('projects.title') }}</h1>
+
+  <div class="projects-grid">
+    @for (project of projects; track project.id) {
+      <a [routerLink]="['/projects', project.id]" class="project-card">
+        <img [src]="coverImage(project.folder)" [alt]="project.name" />
+      </a>
+    }
+  </div>
+</section>

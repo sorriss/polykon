@@ -1,0 +1,53 @@
+<header class="site-header">
+  <a class="brand" routerLink="/">
+    <img src="/assets/images/logo.png" alt="logo" class="brand-logo" />
+  </a>
+
+  <nav class="main-nav">
+    @for (item of navigation; track item.path) {
+      <a [routerLink]="item.path" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: item.path === '' }">
+        {{ text(item.key) }}
+      </a>
+    }
+  </nav>
+
+  <div class="header-actions">
+    <div class="lang-switcher">
+      <button type="button" [class.active]="language() === 'en'" (click)="setLanguage('en')">EN</button>
+      <span class="lang-sep">|</span>
+      <button type="button" [class.active]="language() === 'ua'" (click)="setLanguage('ua')">UA</button>
+    </div>
+
+    <button class="booking-btn" type="button" (click)="openBooking()">
+      {{ text('booking.cta') }}
+    </button>
+  </div>
+</header>
+
+@if (isBookingOpen()) {
+  <div class="modal-backdrop" (click)="closeBooking()">
+    <div class="modal" (click)="$event.stopPropagation()">
+      <h2>{{ text('booking.title') }}</h2>
+
+      <form class="booking-form">
+        <label>
+          {{ text('booking.name') }}
+          <input type="text" />
+        </label>
+        <label>
+          {{ text('booking.email') }}
+          <input type="email" />
+        </label>
+        <label>
+          {{ text('booking.comment') }}
+          <textarea rows="4"></textarea>
+        </label>
+      </form>
+
+      <div class="modal-actions">
+        <button type="button" class="ghost" (click)="closeBooking()">{{ text('booking.cancel') }}</button>
+        <button type="button" (click)="closeBooking()">{{ text('booking.submit') }}</button>
+      </div>
+    </div>
+  </div>
+}
