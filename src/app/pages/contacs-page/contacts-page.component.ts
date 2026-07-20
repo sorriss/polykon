@@ -1,9 +1,10 @@
 import { Component, inject } from '@angular/core';
+import { NgOptimizedImage } from '@angular/common';
 import { LanguageService } from '../../services/language.service';
 
 @Component({
   selector: 'app-contacs-page',
-  imports: [],
+  imports: [NgOptimizedImage],
   templateUrl: './contacts-page.component.html',
   styleUrl: './contacts-page.component.scss',
 })

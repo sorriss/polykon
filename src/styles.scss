@@ -1,3 +1,4 @@
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
 @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
@@ -82,4 +83,33 @@ ul, ol {
 
 button {
   cursor: pointer;
+}
+
+.booking-date-overlay .mat-datepicker-content {
+  --mat-datepicker-calendar-container-background-color: var(--gray-white);
+  background: var(--gray-white);
+}
+
+.booking-time-overlay,
+.booking-time-overlay .mat-timepicker-content,
+.booking-time-overlay .mat-timepicker-panel {
+  --mat-timepicker-container-background-color: var(--gray-white);
+  background: var(--gray-white);
+}
+
+.cdk-overlay-pane .mat-datepicker-content {
+  --mat-datepicker-calendar-container-background-color: var(--gray-white);
+  background: var(--gray-white) !important;
+}
+
+.cdk-overlay-pane .mat-timepicker-panel {
+  --mat-timepicker-container-background-color: var(--gray-white);
+  background: var(--gray-white) !important;
+}
+
+.cdk-overlay-pane .mat-datepicker-content,
+.cdk-overlay-pane .mat-datepicker-content *,
+.cdk-overlay-pane .mat-timepicker-panel,
+.cdk-overlay-pane .mat-timepicker-panel * {
+  font-family: var(--font-family), sans-serif !important;
 }

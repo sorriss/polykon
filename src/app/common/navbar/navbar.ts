@@ -1,10 +1,12 @@
 import { Component, inject, signal } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
+import { NgOptimizedImage } from '@angular/common';
 import { LanguageService } from '../../services/language.service';
+import { BookingModal } from '../booking-modal/booking-modal';
 
 @Component({
   selector: 'app-navbar',
-  imports: [RouterLink, RouterLinkActive],
+  imports: [RouterLink, RouterLinkActive, NgOptimizedImage, BookingModal],
   templateUrl: './navbar.html',
   styleUrl: './navbar.scss',
 })

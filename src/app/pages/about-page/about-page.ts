@@ -1,9 +1,10 @@
 import { Component, inject } from '@angular/core';
+import { NgOptimizedImage } from '@angular/common';
 import { LanguageService } from '../../services/language.service';
 
 @Component({
   selector: 'app-about-page',
-  imports: [],
+  imports: [NgOptimizedImage],
   templateUrl: './about-page.html',
   styleUrl: './about-page.scss',
 })

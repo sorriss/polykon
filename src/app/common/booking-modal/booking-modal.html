@@ -1,0 +1,114 @@
+<div class="booking-modal-backdrop" (click)="close()">
+  <div class="booking-modal" [class.booking-modal-success]="isSuccess()" (click)="$event.stopPropagation()">
+    <button class="booking-modal-close" type="button" aria-label="Close" (click)="close()">×</button>
+
+    @if (isSuccess()) {
+      <h2 class="booking-modal-title booking-modal-title-success">{{ text('booking.success.title') }}</h2>
+      <p class="booking-modal-success-subtitle">{{ text('booking.success.subtitle') }}</p>
+    } @else {
+      <h2 class="booking-modal-title">{{ text('booking.title') }}</h2>
+      <p class="booking-modal-step">Step {{ step() }} of 2</p>
+
+      <div class="booking-modal-progress" aria-hidden="true">
+        <div class="booking-modal-progress-fill" [style.width.%]="progress()"></div>
+      </div>
+
+      @if (step() === 1) {
+        <form class="booking-modal-form booking-modal-form-step-1" [formGroup]="bookingForm">
+          <label>
+            <input
+              type="text"
+              formControlName="fullName"
+              [placeholder]="text('booking.placeholder.fullName')"
+              [class.invalid]="hasError('fullName')"
+            />
+            @if (hasError('fullName')) {
+              <span class="booking-field-error">{{ text('booking.validation.required') }}</span>
+            }
+          </label>
+          <label>
+            <input
+              type="tel"
+              formControlName="phone"
+              [placeholder]="text('booking.placeholder.phone')"
+              [class.invalid]="hasError('phone')"
+            />
+            @if (hasError('phone')) {
+              <span class="booking-field-error">{{ text('booking.validation.required') }}</span>
+            }
+          </label>
+          <label>
+            <input
+              type="email"
+              formControlName="email"
+              [placeholder]="text('booking.placeholder.email')"
+              [class.invalid]="hasError('email')"
+            />
+            @if (hasError('email')) {
+              <span class="booking-field-error">{{ text('booking.validation.email') }}</span>
+            }
+          </label>
+          <label>
+            <input
+              type="text"
+              formControlName="location"
+              [placeholder]="text('booking.placeholder.location')"
+              [class.invalid]="hasError('location')"
+            />
+            @if (hasError('location')) {
+              <span class="booking-field-error">{{ text('booking.validation.required') }}</span>
+            }
+          </label>
+          <label>
+            <input type="text" formControlName="area" [placeholder]="text('booking.placeholder.area')" />
+          </label>
+          <label>
+            <textarea rows="1" formControlName="description" [placeholder]="text('booking.placeholder.description')"></textarea>
+          </label>
+        </form>
+
+        <div class="booking-modal-actions">
+          <button type="button" class="booking-btn-secondary" (click)="close()">{{ text('booking.cancel') }}</button>
+          <button type="button" class="booking-btn-primary" (click)="next()">Confirm</button>
+        </div>
+      } @else {
+        <form class="booking-modal-form booking-modal-form-step-2" [formGroup]="bookingForm">
+          <div class="booking-picker-field" (click)="datePicker.open()">
+            <input
+              matInput
+              [matDatepicker]="datePicker"
+              formControlName="date"
+              [placeholder]="text('booking.placeholder.date')"
+              [class.invalid]="hasError('date')"
+              readonly
+            />
+            <mat-datepicker #datePicker panelClass="booking-date-overlay"></mat-datepicker>
+            @if (hasError('date')) {
+              <span class="booking-field-error">{{ text('booking.validation.required') }}</span>
+            }
+          </div>
+
+          <div class="booking-picker-field" (click)="timePicker.open()">
+            <input
+              matInput
+              [matTimepicker]="timePicker"
+              formControlName="time"
+              [placeholder]="text('booking.placeholder.time')"
+              [class.invalid]="hasError('time')"
+              readonly
+            />
+            <mat-timepicker #timePicker [panelClass]="['booking-time-overlay']"></mat-timepicker>
+            @if (hasError('time')) {
+              <span class="booking-field-error">{{ text('booking.validation.required') }}</span>
+            }
+          </div>
+        </form>
+
+        <div class="booking-modal-actions">
+          <button type="button" class="booking-btn-secondary" (click)="back()">{{ text('booking.cancel') }}</button>
+          <button type="button" class="booking-btn-primary" (click)="submit()">{{ text('booking.cta') }}</button>
+        </div>
+      }
+    }
+  </div>
+</div>

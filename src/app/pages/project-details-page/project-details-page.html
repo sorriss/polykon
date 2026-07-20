@@ -1,1 +1,40 @@
-<p>project-details-page works!</p>
+<section class="project-details-page">
+  @if (project(); as currentProject) {
+    <div class="project-details-header">
+      <div class="breadcrumbs">
+        <a [routerLink]="['/projects']">{{ text('projects.title') }}</a>
+        <span class="breadcrumbs-separator">&lt;</span>
+        <span class="breadcrumbs-current">{{ currentProject.name }}</span>
+      </div>
+      <h1 class="project-details-title">{{ currentProject.name }}</h1>
+    </div>
+
+    <div class="project-gallery">
+      @for (imageUrl of imageUrls(); track imageUrl; let index = $index; let isFirst = $first) {
+        @if (isFirst) {
+          <img
+            [ngSrc]="imageUrl"
+            [alt]="currentProject.name + ' photo ' + (index + 1)"
+            (click)="openFullscreen(index)"
+            width="4096"
+            height="2731"
+            priority
+            decoding="async"
+          />
+        } @else {
+          <img
+            [ngSrc]="imageUrl"
+            [alt]="currentProject.name + ' photo ' + (index + 1)"
+            (click)="openFullscreen(index)"
+            width="4096"
+            height="2731"
+            loading="lazy"
+            decoding="async"
+          />
+        }
+      }
+    </div>
+  } @else {
+    <p class="project-details-not-found">{{ text('detail.notFound') }}</p>
+  }
+</section>

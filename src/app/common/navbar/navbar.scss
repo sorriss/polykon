@@ -18,12 +18,8 @@
 }
 
 .brand-logo {
+  display: block;
   width: auto;
-  img {
-    display: block;
-    height: 31px;
-    width: auto;
-  }
 }
 
 .main-nav {
@@ -100,67 +96,5 @@
 
   &:hover {
     background: var(--color-hover);
-  }
-}
-
-// Modal
-.modal-backdrop {
-  position: fixed;
-  inset: 0;
-  background: var(--blur-card);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1rem;
-  z-index: 100;
-}
-
-.modal {
-  width: min(520px, 100%);
-  background: var(--gray-white);
-  border-radius: 12px;
-  padding: 1.5rem;
-}
-
-.booking-form {
-  display: grid;
-  gap: 0.75rem;
-  margin-top: 1rem;
-
-  label {
-    display: grid;
-    gap: 0.35rem;
-    font-size: 0.9rem;
-  }
-
-  input,
-  textarea {
-    border: 1px solid var(--gray-stroke);
-    border-radius: 8px;
-    padding: 0.5rem;
-    font: inherit;
-  }
-}
-
-.modal-actions {
-  margin-top: 1rem;
-  display: flex;
-  justify-content: flex-end;
-  gap: 0.5rem;
-
-  button {
-    border: none;
-    background: var(--color-primary);
-    color: var(--gray-white);
-    border-radius: 8px;
-    cursor: pointer;
-    padding: 0.6rem 1.25rem;
-    font: inherit;
-    font-size: 0.875rem;
-
-    &.ghost {
-      background: var(--color-fill);
-      color: var(--gray-primary);
-    }
   }
 }
