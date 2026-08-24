@@ -1,9 +1,6 @@
-$hero-image: url('assets/images/home-bg.png');
-
 .hero-section {
   position: relative;
   height: calc(100dvh - 140px);
-  background-image: $hero-image, linear-gradient(135deg, var(--gray-primary) 0%, var(--gray-secondary) 100%);
   background-size: cover;
   background-position: center;
   display: flex;
