@@ -17,7 +17,7 @@ export class ProjectsPage {
   protected readonly projects = this.projectsService.getProjects();
 
   protected coverImage(folder: string): string {
-    return `/assets/images/projects/${folder}/1.png`;
+    return `assets/images/projects/${folder}/1.png`;
   }
 
   protected text(key: string): string {

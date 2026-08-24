@@ -42,7 +42,7 @@ export class ProjectDetailsPage {
     }
     return Array.from(
       { length: project.photoCount },
-      (_, index) => `/assets/images/projects/${project.folder}/${index + 1}.png`,
+      (_, index) => `assets/images/projects/${project.folder}/${index + 1}.png`,
     );
   });
 
