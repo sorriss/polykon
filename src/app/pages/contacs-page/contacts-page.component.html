@@ -6,19 +6,35 @@
       <div class="contacts-list">
         <div class="contact-row">
           <span class="contact-label">{{ text('contacts.hours.label') }}</span>
-          <span class="contact-value">{{ text('contacts.hours.value') }}</span>
+          <span class="contact-value">
+            @for (line of lines('contacts.hours.value'); track $index) {
+              <span class="contact-line">{{ line }}</span>
+            }
+          </span>
         </div>
         <div class="contact-row">
           <span class="contact-label">{{ text('contacts.phone.label') }}</span>
-          <span class="contact-value">{{ text('contacts.phone.value') }}</span>
+          <span class="contact-value">
+            @for (line of lines('contacts.phone.value'); track $index) {
+              <span class="contact-line">{{ line }}</span>
+            }
+          </span>
         </div>
         <div class="contact-row">
           <span class="contact-label">{{ text('contacts.email.label') }}</span>
-          <span class="contact-value">{{ text('contacts.email.value') }}</span>
+          <span class="contact-value">
+            @for (line of lines('contacts.email.value'); track $index) {
+              <span class="contact-line">{{ line }}</span>
+            }
+          </span>
         </div>
         <div class="contact-row">
           <span class="contact-label">{{ text('contacts.address.label') }}</span>
-          <span class="contact-value">{{ text('contacts.address.value') }}</span>
+          <span class="contact-value">
+            @for (line of lines('contacts.address.value'); track $index) {
+              <span class="contact-line">{{ line }}</span>
+            }
+          </span>
         </div>
       </div>
     </div>

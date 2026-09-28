@@ -23,18 +23,23 @@
 
 .booking-modal-close {
   position: absolute;
-  top: 10px;
-  right: 20px;
+  top: 32px;
+  right: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
   border: 0;
   background: transparent;
-  color: var(--gray-secondary);
-  font-size: 32px;
-  line-height: 1;
   cursor: pointer;
-  font-weight: 300;
 }
 
 .booking-modal-title {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  padding-right: 52px;
   color: var(--gray-primary);
   font-weight: 500;
   font-size: 24px;
@@ -187,31 +192,71 @@
   color: var(--gray-white);
 }
 
-@media (max-width: 900px) {
+@media (max-width: 768px) {
+  .booking-modal-backdrop {
+    padding: 16px;
+  }
+
   .booking-modal {
-    padding: 1.25rem;
+    padding: 16px;
   }
 
   .booking-modal-close {
-    top: 1rem;
-    right: 1rem;
-    font-size: 1.5rem;
+    top: 16px;
+    right: 16px;
+  }
+
+  .booking-modal-title {
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+    padding-right: 52px;
+    margin-bottom: 0;
+    font-size: 16px;
+    line-height: 1.4;
   }
 
   .booking-modal-step {
-    font-size: 1.25rem;
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 8px;
+  }
+
+  .booking-modal-progress {
+    height: 5px;
+    margin-bottom: 24px;
+  }
+
+  .booking-modal-form-step-1 {
+    gap: 0;
   }
 
   .booking-modal-form input,
   .booking-modal-form textarea,
   .booking-picker-field input {
-    font-size: 1.2rem;
+    height: 44px;
+    padding-bottom: 4px;
+    font-size: 14px;
+    line-height: 1.5;
   }
 
-  .booking-modal-form-step-2,
-  .booking-modal-actions {
+  .booking-modal-form textarea {
+    padding-top: 10px;
+  }
+
+  .booking-modal-form-step-2 {
     grid-template-columns: 1fr;
-    gap: 1rem;
+    gap: 16px;
   }
 
+  .booking-modal-actions {
+    margin-top: 24px;
+    gap: 8px;
+  }
+
+  .booking-modal-actions button {
+    height: 44px;
+    font-size: 14px;
+    line-height: 1.5;
+  }
 }

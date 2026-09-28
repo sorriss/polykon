@@ -1,0 +1,36 @@
+<footer class="site-footer">
+  <a class="brand" routerLink="/">POLYKON</a>
+
+  <div class="footer-nav">
+    <div class="footer-col">
+      <span class="footer-heading">{{ text('footer.navigation') }}</span>
+      <ul>
+        <li><a routerLink="/about">{{ text('nav.about') }}</a></li>
+        <li><a routerLink="/projects">{{ text('footer.portfolio') }}</a></li>
+        <li><button type="button" (click)="openBooking()">{{ text('footer.pricing') }}</button></li>
+        <li><a routerLink="/contacts">{{ text('nav.contacts') }}</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col footer-col--end">
+      <span class="footer-heading">{{ text('footer.social') }}</span>
+      <ul>
+        @for (social of socials; track social.label) {
+          <li>
+            @if (social.url) {
+              <a [href]="social.url" target="_blank" rel="noopener">{{ social.label }}</a>
+            } @else {
+              <span>{{ social.label }}</span>
+            }
+          </li>
+        }
+      </ul>
+    </div>
+  </div>
+
+  <span class="copyright">© polykon</span>
+</footer>
+
+@if (isBookingOpen()) {
+  <app-booking-modal (closed)="closeBooking()" />
+}

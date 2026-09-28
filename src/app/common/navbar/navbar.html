@@ -1,19 +1,19 @@
 <header class="site-header">
-  <a class="brand" routerLink="/">
-    <img
-      ngSrc="assets/images/logo.png"
-      alt="logo"
-      class="brand-logo"
-      width="127"
-      height="18"
-      priority
-      decoding="async"
-    />
-  </a>
+  <button
+    class="menu-toggle"
+    type="button"
+    [attr.aria-label]="isMenuOpen() ? 'Close menu' : 'Open menu'"
+    [attr.aria-expanded]="isMenuOpen()"
+    (click)="toggleMenu()"
+  >
+    <img [src]="isMenuOpen() ? 'assets/icons/cross.svg' : 'assets/icons/menu.svg'" alt="" width="24" height="24" />
+  </button>
+
+  <a class="brand" routerLink="/" (click)="closeMenu()">POLYKON</a>
 
   <nav class="main-nav">
     @for (item of navigation; track item.path) {
-      <a [routerLink]="item.path" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: item.path === '' }">
+      <a [routerLink]="item.path" routerLinkActive="active">
         {{ text(item.key) }}
       </a>
     }
@@ -22,7 +22,7 @@
   <div class="header-actions">
     <div class="lang-switcher">
       <button type="button" [class.active]="language() === 'en'" (click)="setLanguage('en')">EN</button>
-      <span class="lang-sep">|</span>
+      <span class="lang-sep"></span>
       <button type="button" [class.active]="language() === 'ua'" (click)="setLanguage('ua')">UA</button>
     </div>
 
@@ -31,6 +31,25 @@
     </button>
   </div>
 </header>
+
+@if (isMenuOpen()) {
+  <div class="mobile-menu-backdrop" (click)="closeMenu()"></div>
+  <nav class="mobile-menu">
+    <ul>
+      @for (item of navigation; track item.path) {
+        <li>
+          <a [routerLink]="item.path" routerLinkActive="active" (click)="closeMenu()">
+            {{ text(item.key) }}
+            <img src="assets/icons/chevron-right.svg" alt="" width="24" height="24" />
+          </a>
+        </li>
+      }
+    </ul>
+    <button class="booking-btn" type="button" (click)="openBooking()">
+      {{ text('booking.cta') }}
+    </button>
+  </nav>
+}
 
 @if (isBookingOpen()) {
   <app-booking-modal (closed)="closeBooking()" />

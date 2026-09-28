@@ -1,6 +1,8 @@
 <div class="booking-modal-backdrop" (click)="close()">
   <div class="booking-modal" [class.booking-modal-success]="isSuccess()" (click)="$event.stopPropagation()">
-    <button class="booking-modal-close" type="button" aria-label="Close" (click)="close()">×</button>
+    <button class="booking-modal-close" type="button" aria-label="Close" (click)="close()">
+      <img src="assets/icons/cross.svg" alt="" width="24" height="24" />
+    </button>
 
     @if (isSuccess()) {
       <h2 class="booking-modal-title booking-modal-title-success">{{ text('booking.success.title') }}</h2>

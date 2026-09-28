@@ -14,4 +14,8 @@ export class ContactsPage {
   protected text(key: string): string {
     return this.languageService.t(key);
   }
+
+  protected lines(key: string): string[] {
+    return this.text(key).split('\n');
+  }
 }

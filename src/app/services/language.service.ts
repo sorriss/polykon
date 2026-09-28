@@ -4,10 +4,13 @@ type Language = 'ua' | 'en';
 
 const translations: Record<Language, Record<string, string>> = {
   ua: {
-    'nav.home': 'Головна',
     'nav.about': 'Про мене',
     'nav.projects': 'Проєкти',
     'nav.contacts': 'Контакти',
+    'footer.navigation': 'Навігація',
+    'footer.portfolio': 'Портфоліо',
+    'footer.pricing': 'Ціни та бронювання',
+    'footer.social': 'Соціальні мережі',
     'booking.cta': 'Забронювати консультацію',
     'booking.title': 'Записатись на консультацію',
     'booking.name': 'Ім\'я',
@@ -27,7 +30,7 @@ const translations: Record<Language, Record<string, string>> = {
     'booking.success.subtitle': 'Я зв’яжуся з вами найближчим часом, щоб обговорити ваш проєкт.',
     'booking.cancel': 'Скасувати',
     'booking.submit': 'Надіслати запит',
-    'home.title': 'Позачасові інтер\'єри для сучасних просторів',
+    'home.title': 'Позачасові інтер’єри для сучасних просторів',
     'home.subtitle': 'Елегантні, продумано створені інтер’єри, сформовані вишуканою естетикою та увагою до кожної деталі.',
     'home.cta.explore': 'Переглянути проєкти',
     'about.title': 'Про мене',
@@ -49,10 +52,13 @@ const translations: Record<Language, Record<string, string>> = {
     'detail.notFound': 'Проєкт не знайдено.',
   },
   en: {
-    'nav.home': 'Home',
     'nav.about': 'About me',
     'nav.projects': 'Projects',
     'nav.contacts': 'Contacts',
+    'footer.navigation': 'Navigation',
+    'footer.portfolio': 'Portfolio',
+    'footer.pricing': 'Pricing & booking',
+    'footer.social': 'Social media',
     'booking.cta': 'Book a consultation',
     'booking.title': 'Book a Consultation',
     'booking.name': 'Name',
