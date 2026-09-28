@@ -29,14 +29,14 @@
   --system-info-hover: #20356f;
   --system-info-fill: #d6dced;
 
-  --font-family: "Montserrat", sans-serif;
-  --second-family: "Lato", sans-serif;
-  --third-family: "SF Pro Display", sans-serif;
-  --font3: "Inter", sans-serif;
-  --font4: "EB Garamond", sans-serif;
-  --font5: "SF Pro", sans-serif;
-  --font6: "SF Pro Text", sans-serif;
-  --font7: "Archivo", sans-serif;
+  --font-family: 'Montserrat', sans-serif;
+  --second-family: 'Lato', sans-serif;
+  --third-family: 'SF Pro Display', sans-serif;
+  --font3: 'Inter', sans-serif;
+  --font4: 'EB Garamond', sans-serif;
+  --font5: 'SF Pro', sans-serif;
+  --font6: 'SF Pro Text', sans-serif;
+  --font7: 'Archivo', sans-serif;
 
   --header-height: 146px;
 }
@@ -47,8 +47,9 @@
   }
 }
 
-
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -67,16 +68,29 @@ body {
   font-family: var(--font-family), sans-serif;
 }
 
-img, picture, video, canvas, svg {
+img,
+picture,
+video,
+canvas,
+svg {
   display: block;
   max-width: 100%;
 }
 
-input, button, textarea, select {
+input,
+button,
+textarea,
+select {
   font: inherit;
 }
 
-p, h1, h2, h3, h4, h5, h6 {
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   overflow-wrap: break-word;
 }
 
@@ -85,7 +99,8 @@ a {
   text-decoration: none;
 }
 
-ul, ol {
+ul,
+ol {
   list-style: none;
 }
 

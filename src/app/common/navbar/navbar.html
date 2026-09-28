@@ -6,7 +6,12 @@
     [attr.aria-expanded]="isMenuOpen()"
     (click)="toggleMenu()"
   >
-    <img [src]="isMenuOpen() ? 'assets/icons/cross.svg' : 'assets/icons/menu.svg'" alt="" width="24" height="24" />
+    <img
+      [src]="isMenuOpen() ? 'assets/icons/cross.svg' : 'assets/icons/menu.svg'"
+      alt=""
+      width="24"
+      height="24"
+    />
   </button>
 
   <a class="brand" routerLink="/" (click)="closeMenu()">POLYKON</a>
@@ -21,9 +26,13 @@
 
   <div class="header-actions">
     <div class="lang-switcher">
-      <button type="button" [class.active]="language() === 'en'" (click)="setLanguage('en')">EN</button>
+      <button type="button" [class.active]="language() === 'en'" (click)="setLanguage('en')">
+        EN
+      </button>
       <span class="lang-sep"></span>
-      <button type="button" [class.active]="language() === 'ua'" (click)="setLanguage('ua')">UA</button>
+      <button type="button" [class.active]="language() === 'ua'" (click)="setLanguage('ua')">
+        UA
+      </button>
     </div>
 
     <button class="booking-btn" type="button" (click)="openBooking()">

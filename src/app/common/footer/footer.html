@@ -5,10 +5,18 @@
     <div class="footer-col">
       <span class="footer-heading">{{ text('footer.navigation') }}</span>
       <ul>
-        <li><a routerLink="/about">{{ text('nav.about') }}</a></li>
-        <li><a routerLink="/projects">{{ text('footer.portfolio') }}</a></li>
-        <li><button type="button" (click)="openBooking()">{{ text('footer.pricing') }}</button></li>
-        <li><a routerLink="/contacts">{{ text('nav.contacts') }}</a></li>
+        <li>
+          <a routerLink="/about">{{ text('nav.about') }}</a>
+        </li>
+        <li>
+          <a routerLink="/projects">{{ text('footer.portfolio') }}</a>
+        </li>
+        <li>
+          <button type="button" (click)="openBooking()">{{ text('footer.pricing') }}</button>
+        </li>
+        <li>
+          <a routerLink="/contacts">{{ text('nav.contacts') }}</a>
+        </li>
       </ul>
     </div>
 

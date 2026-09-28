@@ -9,7 +9,13 @@ import { BookingEmailService } from '../../services/booking-email.service';
 
 @Component({
   selector: 'app-booking-modal',
-  imports: [MatInputModule, MatDatepickerModule, MatNativeDateModule, MatTimepickerModule, ReactiveFormsModule],
+  imports: [
+    MatInputModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatTimepickerModule,
+    ReactiveFormsModule,
+  ],
   templateUrl: './booking-modal.html',
   styleUrl: './booking-modal.scss',
 })
