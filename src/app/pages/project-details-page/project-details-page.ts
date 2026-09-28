@@ -35,29 +35,30 @@ export class ProjectDetailsPage {
     return this.projectsService.getProjectById(id);
   });
 
-  protected readonly imageUrls = computed<string[]>(() => {
+  protected readonly photos = computed(() => {
     const project = this.project();
     if (!project) {
       return [];
     }
-    return Array.from(
-      { length: project.photoCount },
-      (_, index) => `assets/images/projects/${project.folder}/${index + 1}.png`,
-    );
+    return project.photos.map(([width, height], index) => ({
+      url: `assets/images/projects/${project.folder}/${index + 1}.webp`,
+      width,
+      height,
+    }));
   });
 
   constructor() {
     effect(() => {
       const project = this.project();
-      const urls = this.imageUrls();
-      if (!project || urls.length === 0) {
+      const photos = this.photos();
+      if (!project || photos.length === 0) {
         this.galleryRef.load([]);
         return;
       }
 
       this.galleryRef.load(
-        urls.map(
-          (url, index) =>
+        photos.map(
+          ({ url }, index) =>
             new ImageItem({
               src: url,
               thumb: url,

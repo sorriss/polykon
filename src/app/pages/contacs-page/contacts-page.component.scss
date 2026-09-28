@@ -65,14 +65,10 @@
 }
 
 .contacts-photo {
-  overflow: hidden;
+  position: relative;
 
   img {
-    height: 100%;
-    max-height: calc(100dvh - 182px);
     object-fit: contain;
-    object-position: center;
-    display: block;
   }
 }
 
@@ -98,12 +94,10 @@
 
   .contacts-photo {
     order: 1;
+    height: 402px;
     margin-bottom: 8px;
 
     img {
-      width: 100%;
-      height: 402px;
-      max-height: none;
       object-fit: cover;
     }
   }

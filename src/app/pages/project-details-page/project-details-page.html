@@ -13,28 +13,17 @@
     </div>
 
     <div class="project-gallery">
-      @for (imageUrl of imageUrls(); track imageUrl; let index = $index; let isFirst = $first) {
-        @if (isFirst) {
+      @for (photo of photos(); track photo.url; let index = $index; let isFirst = $first) {
+        <div class="project-photo" [style.--ratio]="photo.width + ' / ' + photo.height">
           <img
-            [ngSrc]="imageUrl"
+            [ngSrc]="photo.url"
             [alt]="currentProject.name + ' photo ' + (index + 1)"
             (click)="openFullscreen(index)"
-            width="4096"
-            height="2731"
-            priority
+            [priority]="isFirst"
+            fill
             decoding="async"
           />
-        } @else {
-          <img
-            [ngSrc]="imageUrl"
-            [alt]="currentProject.name + ' photo ' + (index + 1)"
-            (click)="openFullscreen(index)"
-            width="4096"
-            height="2731"
-            loading="lazy"
-            decoding="async"
-          />
-        }
+        </div>
       }
     </div>
   } @else {

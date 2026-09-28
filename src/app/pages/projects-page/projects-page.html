@@ -4,25 +4,15 @@
   <div class="projects-grid">
     @for (project of projects; track project.id; let isFirst = $first) {
       <a [routerLink]="['/projects', project.id]" class="project-card">
-        @if (isFirst) {
+        <div class="project-cover">
           <img
             [ngSrc]="coverImage(project.folder)"
             [alt]="project.name"
-            width="1200"
-            height="900"
-            priority
+            [priority]="isFirst"
+            fill
             decoding="async"
           />
-        } @else {
-          <img
-            [ngSrc]="coverImage(project.folder)"
-            [alt]="project.name"
-            width="1200"
-            height="900"
-            loading="lazy"
-            decoding="async"
-          />
-        }
+        </div>
         <span class="project-name">{{ project.name }}</span>
       </a>
     }

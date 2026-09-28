@@ -21,21 +21,22 @@
 
 .project-card {
   display: block;
-  overflow: hidden;
   text-decoration: none;
-
-  img {
-    background: var(--color-fill);
-    width: 100%;
-    height: auto;
-    aspect-ratio: 649 / 722;
-    object-fit: cover;
-    display: block;
-    transition: transform 0.5s ease;
-  }
 
   &:hover img {
     transform: scale(1.03);
+  }
+}
+
+.project-cover {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 649 / 722;
+  background: var(--color-fill);
+
+  img {
+    object-fit: cover;
+    transition: transform 0.5s ease;
   }
 }
 
@@ -60,16 +61,12 @@
     gap: 16px;
   }
 
-  .project-card {
-    overflow: visible;
+  .project-card:hover img {
+    transform: none;
+  }
 
-    img {
-      aspect-ratio: 343 / 402;
-    }
-
-    &:hover img {
-      transform: none;
-    }
+  .project-cover {
+    aspect-ratio: 343 / 402;
   }
 
   .project-name {

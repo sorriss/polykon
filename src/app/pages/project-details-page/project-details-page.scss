@@ -52,12 +52,14 @@
   gap: 0.75rem;
 }
 
-.project-gallery img {
-  width: 100%;
-  height: auto;
-  display: block;
-  object-fit: cover;
-  cursor: zoom-in;
+.project-photo {
+  position: relative;
+  aspect-ratio: var(--ratio);
+
+  img {
+    object-fit: cover;
+    cursor: zoom-in;
+  }
 }
 
 .project-details-not-found {
@@ -93,7 +95,7 @@
     gap: 16px;
   }
 
-  .project-gallery img {
+  .project-photo {
     aspect-ratio: 343 / 402;
   }
 }
